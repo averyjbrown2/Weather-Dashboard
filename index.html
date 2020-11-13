@@ -31,8 +31,8 @@
             <div class="col-md-3 ">               
                 <h4>Search for a city:</h4>
                 <input id="inputID" class="float-left" type="text">
-                <button type="button" class="btn btn-primary">Search</button>
-                
+                <button data-city="city" type="button" class="btn btn-primary">Search</button>
+                    
                 <div class="card" style="width: 14rem;">
                     <ul id="ulId" class="list-group list-group-flush">
                         <li class="list-group-item"></li>
@@ -63,27 +63,33 @@
 
 
     <script>
+         $(".btn").on("click", function(){
+            var dataCity= $(this).attr("data-city");
+
         //creating queryURL to allow for multiple multiples city requests
+        var cityAPI = "charlotte";
         var apiKey = "889713e1a5fb65a0826584f1dfb1e2b5";
         var queryURL = "https://api.openweathermap.org/data/2.5/weather?q="+ cityAPI + "&appid=" + apiKey;
-        var cityAPI = "charlotte";
-            
+        
+            //coord for UV index
             $.ajax({
               url: queryURL,
               method: "GET"
              }).then(function(response) {
-                console.log(queryURL);
-                console.log(response);
-              
-             });
-
+                var dailyCity = response.name;
+                var dailyCloud= response.weather.;
+            console.log(dailyCity);
+            console.log(dailyCloud);
+              });
+         });
+            // for(var i=0; i<)
 
         //         var li = $("<li>");
         //         var cityId=
         //         var cityInput= $(".float-left").val();
         //         cityInput
         //     });
-        //         $(".btn").on("click", function(event){
+        //        
         //             $(".list-group-item").append("<li>");
         //             $("<li>").append("cityInput")
         //             $("#ulId").append("<li>");
