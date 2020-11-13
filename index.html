@@ -77,9 +77,20 @@
               method: "GET"
              }).then(function(response) {
                 var dailyCity = response.name;
-                var dailyCloud= response.weather.;
+               // var dailyDate = response
+                var tempF= ((response.main.temp-273.15)*1.80 +32).toFixed(2)
+                var dailyHumidity= response.main.humidity;
+                var dailyWindspeed= response.wind.speed;
+                var dailyUV = response.coord;
+                var dailyIcon= response.weather[0].icon
             console.log(dailyCity);
-            console.log(dailyCloud);
+            //console.log(dailyDate);   
+            console.log(tempF + " degrees F");
+            console.log(dailyHumidity);
+            console.log(dailyWindspeed);
+            console.log(dailyUV);
+            console.log(dailyIcon);
+
               });
          });
             // for(var i=0; i<)
