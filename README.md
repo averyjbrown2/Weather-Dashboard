@@ -6,6 +6,6 @@ This weather dashboard was developed to serve as a real-time weather forecast fo
 [Deployed Website](https://averyjbrown2.github.io/Weather-Dashboard//)
 
 
-## Images:
+## Image:
 
 ![deployed site](./Assets/Image1.png)
